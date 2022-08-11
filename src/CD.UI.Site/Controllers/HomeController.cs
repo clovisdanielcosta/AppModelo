@@ -8,6 +8,5 @@ namespace CD.UI.Site.Controllers
         {
             return View();
         }
-
     }
 }
