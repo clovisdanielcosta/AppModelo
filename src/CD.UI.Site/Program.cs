@@ -13,6 +13,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute("areas", "{area:exists}/{controller=Cadastro}/{action=Index}/{id?}");
+
+app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
