@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\OneDrive\16-Projetos\projetos\.NET\AppModelo\src\CD.UI.Site
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/OneDrive/16-Projetos/projetos/.NET/AppModelo/src/CD.UI.Site/Modulos/Produtos/Views/Cadastro/Busca.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxvc1xQcm9kdXRvc1xWaWV3c1xDYWRhc3Ryb1xCdXNjYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/OneDrive/16-Projetos/projetos/.NET/AppModelo/src/CD.UI.Site/Modulos/Produtos/Views/Cadastro/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = TW9kdWxvc1xQcm9kdXRvc1xWaWV3c1xDYWRhc3Ryb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
