@@ -23,7 +23,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.MapControllerRoute("areas", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+//Using default route to all areas
+//app.MapControllerRoute("areas", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+//If you want route by area
+app.MapAreaControllerRoute("AreaProdutos", "Produtos", "Produtos/{controller=Cadastro}/{action=Index}/{id?}");
+app.MapAreaControllerRoute("AreaVendas", "Vendas", "Vendas/{controller=Pedidos}/{action=Index}/{id?}");
+
 
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
