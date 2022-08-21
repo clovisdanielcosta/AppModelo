@@ -8,10 +8,11 @@ namespace CD.UI.Site.Controllers
     {
 
         //private readonly IPedidoRepository _pedidoRepository;
-        public OperacaoService OperacaoService { get; set; }
-        public OperacaoService OperacaoService2 { get; set; }
+        public OperacaoService OperacaoService { get; }
+        public OperacaoService OperacaoService2 { get; }
 
-        public HomeController(IPedidoRepository pedidoRepository, OperacaoService operacaoService,OperacaoService operacaoService2)
+        //public HomeController(IPedidoRepository pedidoRepository, OperacaoService operacaoService,OperacaoService operacaoService2)
+        public HomeController(OperacaoService operacaoService, OperacaoService operacaoService2)
         {
             //_pedidoRepository = pedidoRepository;
             OperacaoService2 = operacaoService;
@@ -35,8 +36,6 @@ namespace CD.UI.Site.Controllers
                 OperacaoService2.Scoped.OperacaoId + Environment.NewLine +
                 OperacaoService2.Singleton.OperacaoId + Environment.NewLine +
                 OperacaoService2.SingletonInstance.OperacaoId + Environment.NewLine;
-
-
         }
 
         /*public IActionResult Index()

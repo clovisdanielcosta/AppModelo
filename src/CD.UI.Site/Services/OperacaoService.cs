@@ -47,22 +47,18 @@
 
     public interface IOperacaoTransient : IOperacao
     {
-
     }
 
     public interface IOperacaoScoped : IOperacao
     {
-
     }
 
     public interface IOperacaoSingleton : IOperacao
     {
-
     }
 
     public interface IOperacaoSingletonInstance : IOperacao
     {
-
     }
 
 
