@@ -18,5 +18,13 @@ namespace CD.UI.Site.Controllers
 
             return View();
         }
+
+        /*Outra maneira de injetar dependência quando não se pode criar o construtor
+        public IActionResult Index([FromServices] IPedidoRepository pedidoRepository)
+        {
+            var pedido = _pedidoRepository.ObterPedido();
+
+            return View();
+        } */
     }
 }
