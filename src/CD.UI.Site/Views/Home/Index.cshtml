@@ -1,1 +1,7 @@
-﻿Hello!
+﻿@using CD.UI.Site.Data
+
+@inject IPedidoRepository PedidoRepository
+
+Hello!
+
+Chave Pix: @PedidoRepository.ObterPedido().Id
