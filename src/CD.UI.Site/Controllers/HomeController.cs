@@ -1,20 +1,47 @@
 ﻿using CD.UI.Site.Data;
+using CD.UI.Site.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CD.UI.Site.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPedidoRepository _pedidoRepository;
 
-        public HomeController(IPedidoRepository pedidoRepository)
+        //private readonly IPedidoRepository _pedidoRepository;
+        public OperacaoService OperacaoService { get; set; }
+        public OperacaoService OperacaoService2 { get; set; }
+
+        public HomeController(IPedidoRepository pedidoRepository, OperacaoService operacaoService,OperacaoService operacaoService2)
         {
-            _pedidoRepository = pedidoRepository;
+            //_pedidoRepository = pedidoRepository;
+            OperacaoService2 = operacaoService;
+            OperacaoService2 = operacaoService2;
         }
 
-        public IActionResult Index()
+        public string Index()
         {
-            var pedido = _pedidoRepository.ObterPedido();
+            return
+                "Primeira instância: " + Environment.NewLine +
+                OperacaoService.Transient.OperacaoId + Environment.NewLine +
+                OperacaoService.Scoped.OperacaoId + Environment.NewLine +
+                OperacaoService.Singleton.OperacaoId + Environment.NewLine +
+                OperacaoService.SingletonInstance.OperacaoId + Environment.NewLine +
+
+                Environment.NewLine +
+                Environment.NewLine +
+
+                "Segunda instância: " + Environment.NewLine +
+                OperacaoService2.Transient.OperacaoId + Environment.NewLine +
+                OperacaoService2.Scoped.OperacaoId + Environment.NewLine +
+                OperacaoService2.Singleton.OperacaoId + Environment.NewLine +
+                OperacaoService2.SingletonInstance.OperacaoId + Environment.NewLine;
+
+
+        }
+
+        /*public IActionResult Index()
+        {
+            //var pedido = _pedidoRepository.ObterPedido();
 
             return View();
         }
