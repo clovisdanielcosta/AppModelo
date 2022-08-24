@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj": {}
+    "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\ASPNET\\MVC\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj": {}
   },
   "projects": {
-    "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj": {
+    "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\ASPNET\\MVC\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj",
+        "projectUniqueName": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\ASPNET\\MVC\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj",
         "projectName": "CD.UI.Site",
-        "projectPath": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj",
+        "projectPath": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\ASPNET\\MVC\\AppModelo\\src\\CD.UI.Site\\CD.UI.Site.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\AppModelo\\src\\CD.UI.Site\\obj\\",
+        "outputPath": "C:\\OneDrive\\16-Projetos\\projetos\\.NET\\ASPNET\\MVC\\AppModelo\\src\\CD.UI.Site\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.8, )"

@@ -7,40 +7,41 @@ namespace CD.UI.Site.Controllers
     public class HomeController : Controller
     {
 
-        //private readonly IPedidoRepository _pedidoRepository;
+        private readonly IPedidoRepository _pedidoRepository;
         public OperacaoService OperacaoService { get; }
         public OperacaoService OperacaoService2 { get; }
 
-        //public HomeController(IPedidoRepository pedidoRepository, OperacaoService operacaoService,OperacaoService operacaoService2)
-        public HomeController(OperacaoService operacaoService, OperacaoService operacaoService2)
+        public HomeController(IPedidoRepository pedidoRepository, OperacaoService operacaoService,OperacaoService operacaoService2)
+        //public HomeController(OperacaoService operacaoService, OperacaoService operacaoService2)
         {
-            //_pedidoRepository = pedidoRepository;
+            _pedidoRepository = pedidoRepository;
             OperacaoService2 = operacaoService;
             OperacaoService2 = operacaoService2;
         }
 
-        public string Index()
+        ////Exempo de ciclo de vida das variáveis
+        //public string Index()
+        //{
+        //    return
+        //        "Primeira instância: " + Environment.NewLine +
+        //        OperacaoService.Transient.OperacaoId + Environment.NewLine +
+        //        OperacaoService.Scoped.OperacaoId + Environment.NewLine +
+        //        OperacaoService.Singleton.OperacaoId + Environment.NewLine +
+        //        OperacaoService.SingletonInstance.OperacaoId + Environment.NewLine +
+
+        //        Environment.NewLine +
+        //        Environment.NewLine +
+
+        //        "Segunda instância: " + Environment.NewLine +
+        //        OperacaoService2.Transient.OperacaoId + Environment.NewLine +
+        //        OperacaoService2.Scoped.OperacaoId + Environment.NewLine +
+        //        OperacaoService2.Singleton.OperacaoId + Environment.NewLine +
+        //        OperacaoService2.SingletonInstance.OperacaoId + Environment.NewLine;
+        //}
+
+        public IActionResult Index()
         {
-            return
-                "Primeira instância: " + Environment.NewLine +
-                OperacaoService.Transient.OperacaoId + Environment.NewLine +
-                OperacaoService.Scoped.OperacaoId + Environment.NewLine +
-                OperacaoService.Singleton.OperacaoId + Environment.NewLine +
-                OperacaoService.SingletonInstance.OperacaoId + Environment.NewLine +
-
-                Environment.NewLine +
-                Environment.NewLine +
-
-                "Segunda instância: " + Environment.NewLine +
-                OperacaoService2.Transient.OperacaoId + Environment.NewLine +
-                OperacaoService2.Scoped.OperacaoId + Environment.NewLine +
-                OperacaoService2.Singleton.OperacaoId + Environment.NewLine +
-                OperacaoService2.SingletonInstance.OperacaoId + Environment.NewLine;
-        }
-
-        /*public IActionResult Index()
-        {
-            //var pedido = _pedidoRepository.ObterPedido();
+            var pedido = _pedidoRepository.ObterPedido();
 
             return View();
         }

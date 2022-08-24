@@ -1,9 +1,20 @@
 using CD.UI.Site.Data;
 using CD.UI.Site.Services;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddEnvironmentVariables();
+
+builder.Services.AddDbContext<MeuDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MeuDbContext")));
 
 builder.Services.Configure<RazorViewEngineOptions>(options =>
 {
@@ -21,6 +32,7 @@ builder.Services.AddSingleton<IOperacaoSingleton, Operacao>();
 builder.Services.AddSingleton<IOperacaoSingletonInstance>(new Operacao(Guid.Empty));
 
 builder.Services.AddTransient<OperacaoService>();
+
 
 builder.Services.AddControllersWithViews();
 
