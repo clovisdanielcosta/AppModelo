@@ -18,7 +18,7 @@ namespace CD.UI.Site.Controllers
         {
             var aluno = new Aluno() 
             { 
-                Nome = "Daniel Costa",
+                Nome = "Daniel",
                 DataNascimento = DateTime.Now,
                 Email = "danielc@hotmail.com"
             };
@@ -27,8 +27,19 @@ namespace CD.UI.Site.Controllers
             _contexto.SaveChanges();
 
             var alunoBuscaPorId = _contexto.Alunos.Find(aluno.Id);
+            var alunoBuscaPorEmail = _contexto.Alunos.FirstOrDefault(a => a.Email == "danielc@hotmail.com");
+            var listaAlunos = _contexto.Alunos.Where(a => a.Nome.Contains("Daniel"));
 
-            var alunoBuscaPorEmail = _contexto.Alunos.FirstOrDefault(a => aluno.Email == "danielc@hotmail.com");
+            aluno.Nome = "Clovis";
+            _contexto.Alunos.Update(aluno);
+            _contexto.SaveChanges();
+
+            _contexto.Alunos.Remove(aluno);
+            _contexto.SaveChanges();
+
+            var alunoASerRemovido = _contexto.Alunos.Find(aluno.Id);
+            _contexto.Alunos.Remove(alunoASerRemovido);
+            _contexto.SaveChanges();
 
             return View();
         }
