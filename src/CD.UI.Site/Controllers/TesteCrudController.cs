@@ -37,11 +37,13 @@ namespace CD.UI.Site.Controllers
             _contexto.Alunos.Remove(aluno);
             _contexto.SaveChanges();
 
+            _contexto.Alunos.Add(aluno);
+            _contexto.SaveChanges();
             var alunoASerRemovido = _contexto.Alunos.Find(aluno.Id);
             _contexto.Alunos.Remove(alunoASerRemovido);
             _contexto.SaveChanges();
 
-            return View();
+            return View("_Layout");
         }
     }
 }
