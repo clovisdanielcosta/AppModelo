@@ -8,7 +8,6 @@ namespace CD.UI.Site.Data
         public MeuDbContext(DbContextOptions options)
             : base(options)
         {
-
         }
 
         public DbSet<Aluno> Alunos { get; set; }
