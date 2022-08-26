@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CD.UI.Site.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CD.UI.Site.Data
 {
@@ -9,5 +10,7 @@ namespace CD.UI.Site.Data
         {
 
         }
+
+        public DbSet<Aluno> Alunos { get; set; }
     }
 }
